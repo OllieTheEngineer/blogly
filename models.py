@@ -18,8 +18,13 @@ class User(db.Model):
     last_name = db.Column(db.Text, nullable=False)
     image_url = db.Column(db.Text, nullable=False, default=default_image)
 
+def full_name(self):
+    return f"{self.first_name} {self.last_name}"
 
 
 def connect_db(app):
     db.app = app
     db.init_app(app)
+
+
+    

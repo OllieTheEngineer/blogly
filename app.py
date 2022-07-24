@@ -14,7 +14,7 @@ app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 connect_db(app)
 db.create_all()
 
-@app.route('/')
+@app.route('/users')
 def home_page():
     """ The home page"""
     return render_template("index.html")
@@ -23,7 +23,7 @@ def home_page():
 @app.route('/users/newuser', methods=["GET"])
 def new_user_form():
 
-    return render_template('users/newuser.html')
+    return render_template('newuser.html')
 
 
 @app.route('/users/newuser', methods=["POST"])
