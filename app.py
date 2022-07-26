@@ -17,7 +17,8 @@ db.create_all()
 @app.route('/users')
 def home_page():
     """ The home page"""
-    return render_template("index.html")
+    users = User.query.all()
+    return render_template("index.html", users=users)
 
 
 @app.route('/users/newuser', methods=["GET"])
@@ -43,14 +44,14 @@ def new_user():
 def show_users(user_id):
 
     user = User.query.get_or_404(user_id)
-    return render_template('users/shownewuser.html', user=user)
+    return render_template('shownewuser.html', user=user)
 
 
 @app.route('/users/<int:user_id>/edit')
 def edit_user(user_id):
 
     user = User.query.get_or_404(user_id)
-    return render_template('users/edituser.html', user=user)
+    return render_template('edituser.html', user=user)
 
 @app.route('/users/<int:user_id>/edit', methods=["POST"])
 def update_user(user_id):

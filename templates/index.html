@@ -8,12 +8,13 @@
     {% for user in users %}
     <li>
         <a href="/users/{{user.id}}">{{user.first_name}}</a>
+        <img src="{{user.image_url}}" alt="text"/>
     </li>
     {% endfor %}
 </ul>
 
 <p>
-    <a class=href="/users/newuser">Add New User</a>
+    <a class="" href="/users/newuser">Add New User</a>
 </p>
 
 {% endblock %}

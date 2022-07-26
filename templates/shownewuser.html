@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% Block Title %} {{user.first_name}} {% endblock%}
+{% block title %} {{user.first_name}} {% endblock %}
 {% block content %}
 
 <div>
@@ -11,7 +11,7 @@
     </div>
     {% endif %}
 
-
+    <a href="/user/<int:user_id>/edit">Edit User</a>
 </div>
 
 {% endblock %}
